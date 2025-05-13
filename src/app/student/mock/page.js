@@ -214,7 +214,7 @@ export default function StartPage() {
                 </div>
 
                 <button className="w-full mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-colors font-medium">
-                  <Link href={`/student/mock/start/${test.id}`}>
+                  <Link href={`/student/mock/start/`}>
                     {test.attempted ? 'Retake Test' : 'Start Test'}
                   </Link>
                 </button>

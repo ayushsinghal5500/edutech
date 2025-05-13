@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Menu, ChevronDown, Bell, Mail } from "lucide-react";
 import { Avatar,AvatarImage,AvatarFallback } from "@/components/ui/avatar";
+import Link from "next/link";
 
 export default function Header({ onToggleSidebar }) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -26,8 +27,12 @@ export default function Header({ onToggleSidebar }) {
 
       {/* Right Section */}
       <div className="flex items-center gap-4">
-        <Bell className="w-5 h-5 cursor-pointer" />
-        <Mail className="w-5 h-5 cursor-pointer" />
+        <Link href="/student/notifications">
+          <Bell className="w-5 h-5 cursor-pointer" />
+        </Link>
+        <Link href="/student/inbox">
+          <Mail className="w-5 h-5 cursor-pointer" />
+        </Link>
 
         <div className="relative">
           <div
@@ -45,10 +50,16 @@ export default function Header({ onToggleSidebar }) {
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 w-40 bg-white text-black rounded shadow-lg z-10">
               <ul>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Settings</li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
-              </ul>
+  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+    <Link href="/student/profile">Profile</Link>
+  </li>
+  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+    <Link href="/settings">Settings</Link>
+  </li>
+  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+    <Link href="/login">Logout</Link>
+  </li>
+</ul>
             </div>
           )}
         </div>
