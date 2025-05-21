@@ -121,7 +121,7 @@ export default function Notification() {
 
       {notifications.length === 0 ? (
         <p className="text-muted-foreground text-sm text-center mt-10">
-          🎉 You're all caught up!
+          🎉 You&#39;re all caught up!
         </p>
       ) : (
         <div className="flex flex-col gap-4">

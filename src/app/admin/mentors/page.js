@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Plus, Search, Pencil, Trash2, UserCheck, UserX } from "lucide-react";
@@ -140,11 +141,14 @@ export default function MentorManagementPage() {
                 >
                   <td className="py-2">{index + 1}</td>
                   <td className="py-2">
-                    <img
-                      src={m.picture || "https://i.pravatar.cc/40"}
-                      alt={m.name}
-                      className="h-10 w-10 rounded-full object-cover"
-                    />
+                   <Image
+  src={m.picture || "https://i.pravatar.cc/40"}
+  alt={m.name}
+  width={40}
+  height={40}
+  className="rounded-full object-cover"
+/>
+
                   </td>
                   <td className="py-2 font-medium">{m.name}</td>
                   <td className="py-2">{m.expertise}</td>
